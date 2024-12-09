@@ -1,45 +1,46 @@
 # CorePackages  
 
-Bu paket, **.NET Core** projelerinde kullanılmak üzere geliştirilmiş, modüler ve esnek bir altyapı sunar.  
-**Web API**, **MVC**, **Microservices**, hatta **Console Applications** gibi her tür **.NET Core** uygulamasıyla entegre edilebilir.  
+This package provides a modular and flexible infrastructure for **.NET Core** projects.  
+It is compatible with various types of **.NET Core** applications, including **Web API**, **MVC**, **Microservices**.  
 
 ---
 
-## 🚀 Neden Bu Paketi Kullanmalısınız?  
+## 🚀 Why Use This Package?  
 
-### ✅ Her .NET Core Projesi ile Uyumlu  
-Bu paket, .NET Core tabanlı uygulamaların ihtiyaç duyduğu temel altyapı ve yaygın **best practice**'leri desteklemek üzere tasarlanmıştır.  
+### ✅ Compatible with Every .NET Core Project  
+This package is designed to support the essential infrastructure and common best practices required by .NET Core-based applications.  
 
-### ✅ Kolay Entegrasyon  
-Minimal kurulum ve ayarlama ile hızlıca projelerinize entegre edebilirsiniz.  
+### ✅ Easy Integration  
+Integrate quickly into your projects with minimal setup and configuration.  
 
-### ✅ Modüler Tasarım  
-İhtiyaç duyduğunuz özellikleri seçerek kullanabilir, gereksiz kod yükünü azaltabilirsiniz.  
-
----
-
-## 📦 Kullanım Senaryoları  
-
-Bu paket, **.NET Core** projelerinizin ihtiyaç duyduğu temel altyapıyı sağlamak üzere tasarlanmıştır ve aşağıdaki senaryolarda eksiksiz bir çözüm sunar:  
-- 🌐 **Web API Projeleri**  
-- 🖥️ **MVC Projeleri**  
-- 🛠️ **Microservices**   
+### ✅ Modular Design  
+Select and use only the features you need, reducing unnecessary code overhead.  
 
 ---
 
-## 🌟 Her Özellik Her Projede Kullanılabilir!  
+## 📦 Use Cases  
 
-Bu paketin sunduğu tüm bileşenler ve özellikler, yukarıdaki tüm proje türlerinde sorunsuzca kullanılabilir. Örneğin:  
-
-- **Repository ve Pipeline Altyapısı:**  
-  Tüm veri işleme ve iş süreçleri için uygulanabilir.  
-- **Validation (FluentValidation), Transaction Management, ve Caching Mekanizmaları:**  
-  Tüm projelerde verimlilik sağlar.  
-- **Dynamic Search, Entity Framework İmplementasyonu ve Mapping Araçları:**  
-  Her tür veri odaklı projede güçlü bir altyapı sunar.  
-- **Serilog ve Global Hata Yönetimi:**  
-  Tüm uygulama türlerinde izlenebilirlik ve hata yönetimi sağlar.  
-
-Bu modüler ve uyarlanabilir yapı sayesinde, hangi proje türü üzerinde çalışıyor olursanız olun, paketi doğrudan entegre edebilir ve tüm özelliklerinden faydalanabilirsiniz.  
+This package is designed to provide the essential infrastructure needed for .NET Core projects and offers a complete solution in the following scenarios:  
+- 🌐 **Web API Projects**  
+- 🖥️ **MVC Projects**  
+- 🛠️ **Microservices**  
 
 ---
+
+## 🌟 All Features Work in Every Project!  
+
+All components and features provided by this package can be seamlessly utilized in all of the above project types. For example:  
+
+- **Repository and Pipeline Infrastructure:**  
+  Applicable for all data processing and business workflows.  
+- **Validation (FluentValidation), Transaction Management, and Caching Mechanisms:**  
+  Improve efficiency across all projects.  
+- **Dynamic Search, Entity Framework Implementations, and Mapping Tools:**  
+  Provide a robust infrastructure for any data-driven project.  
+- **Serilog and Global Exception Handling:**  
+  Enhance traceability and error management across all application types.  
+
+Thanks to its modular and adaptable structure, you can directly integrate this package into any type of project and fully leverage its features.  
+
+---
+
