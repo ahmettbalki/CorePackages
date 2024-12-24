@@ -1,24 +1,50 @@
 ﻿using CorePackages.CrossCuttingConcerns.Exceptions.Handlers;
+using CorePackages.CrossCuttingConcerns.Logging;
+using CorePackages.CrossCuttingConcerns.Serilog;
 using Microsoft.AspNetCore.Http;
+using System.Text.Json;
 namespace CorePackages.CrossCuttingConcerns.Exceptions;
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly HttpExceptionHandler _httpExceptionHandler;
-    public ExceptionMiddleware(RequestDelegate netx)
+    private readonly IHttpContextAccessor _contextAccessor;
+    private readonly LoggerServiceBase _loggerService;
+    public ExceptionMiddleware(RequestDelegate next,
+        IHttpContextAccessor contextAccessor, LoggerServiceBase loggerService)
     {
-        _next = netx;
+        _next = next;
         _httpExceptionHandler = new HttpExceptionHandler();
+        _contextAccessor = contextAccessor;
+        _loggerService = loggerService;
     }
     public async Task Invoke(HttpContext context)
     {
         try
         {
             await _next(context);
-        }catch (Exception ex)
-        {
-            await HandleExceptionAsync(context.Response, ex);
         }
+        catch (Exception exception)
+        {
+            await LogException(context, exception);
+            await HandleExceptionAsync(context.Response, exception);
+        }
+    }
+    private Task LogException(HttpContext context, Exception exception)
+    {
+        List<LogParameter> logParameters = new()
+        {
+            new LogParameter{Type=context.GetType().Name, Value=exception.ToString()}
+        };
+        LogDetailWithException logDetail = new()
+        {
+            ExceptionMessage = exception.Message,
+            MethodName = _next.Method.Name,
+            Parameters = logParameters,
+            User = _contextAccessor.HttpContext?.User.Identity?.Name ?? "?"
+        };
+        _loggerService.Error(JsonSerializer.Serialize(logDetail));
+        return Task.CompletedTask;
     }
     private Task HandleExceptionAsync(HttpResponse response, Exception exception)
     {
